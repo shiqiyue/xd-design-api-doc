@@ -13,5 +13,4 @@
 
 * [权限/后台用户/角色](adm_api/sys.md)
 * [安全管理](adm_api/sec.md)
-
-
+* [素材管理](adm_api/irm.md)

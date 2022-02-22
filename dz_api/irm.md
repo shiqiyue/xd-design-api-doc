@@ -22,6 +22,35 @@ mutation addIdea($data:AddIdeaInput!){
 }
 ```
 
+## 修改素材
+```json
+mutation updateIdea($data:EditIdeaInput!){
+  editIdea(data:$data)
+}
+```
+```json
+{
+  "data":{
+   "id": 1,
+    "tags": ["西瓜", "香蕉"],
+    "description": "adasdad",
+    "name": "sdasda",
+    "url": "acasca",
+    "originName": "dasdasd",
+    "originCreator": "dacac",
+    "cc": "CC0"
+  }
+}
+```
+
+## 删除素材
+```json
+mutation {
+  removeIdeas(ids:[1])
+}
+```
+
+
 ## 查询单个素材
 ```json
 query idea{

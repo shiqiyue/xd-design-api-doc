@@ -21,3 +21,59 @@ mutation addIdea($data:AddIdeaInput!){
   }
 }
 ```
+
+## 查询单个素材
+```json
+query idea{
+  idea(id:1){
+    tags
+    id
+    visible
+    ideaReview{
+      status
+      passTime
+    }
+  }
+}
+```
+
+
+## 我的素材查询
+```json
+query myIdeas($data:MyIdeasInput!){
+  myIdeas(data:$data){
+   total
+    records{
+      description
+    }
+  }
+}
+```
+```json
+{
+  "data":{
+   "pageNum": 1,
+    "pageSize": 2
+  }
+}
+```
+
+## 公共素材查询
+```json
+query publicIdeas($data:PublicIdeasInput!){
+  publicIdeas(data:$data){
+   total
+    records{
+      description
+    }
+  }
+}
+```
+```json
+{
+  "data":{
+   "pageNum": 1,
+    "pageSize": 2
+  }
+}
+```

@@ -142,3 +142,16 @@ query ideaReviews($data:IdeaReviewsInput!){
   }
 }
 ```
+
+
+## 授权范围字典列表
+```json
+query {
+  authScopeDicts{
+    id
+    pid
+    code
+    content
+  }
+}
+```

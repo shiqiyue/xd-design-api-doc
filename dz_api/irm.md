@@ -106,3 +106,15 @@ query publicIdeas($data:PublicIdeasInput!){
   }
 }
 ```
+
+## 授权范围字典列表
+```json
+query {
+  authScopeDicts{
+    id
+    pid
+    code
+    content
+  }
+}
+```

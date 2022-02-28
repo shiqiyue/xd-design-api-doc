@@ -155,3 +155,122 @@ query {
   }
 }
 ```
+
+# 素材授权模板
+
+## 添加
+```json
+mutation addIdeaAuthTemplate($data:AddIdeaAuthTemplateInput!){
+  addIdeaAuthTemplate(data:$data)
+}
+```
+```json
+{
+  "data":{
+   "name": "授权模板3",
+    "isAllowEdit": true,
+    "isDefault": true,
+    "authScopes": [1,2,3],
+    "authTime": "JUST_ONE_TIME",
+    "authTimeLimit": 12,
+    "authUseNum": "ONE_LIMITED",
+    "authUseNumLimit": 1000,
+    "authType": "NON_EXCLUSIVE_LICENSE",
+    "authRegions": ["CHINA_MAINLAND"],
+    "authLimits": []
+  }
+}
+```
+
+## 修改
+```json
+mutation editIdeaAuthTemplate($data:EditIdeaAuthTemplateInput!){
+  editIdeaAuthTemplate(data:$data)
+}
+```
+```json
+{
+  "data":{
+    "id": 1,
+    "name": "授权模板4",
+    "isAllowEdit": true,
+    "isDefault": true,
+    "authScopes": [1,2,3],
+    "authTime": "JUST_ONE_TIME",
+    "authTimeLimit": 12,
+    "authUseNum": "ONE_LIMITED",
+    "authUseNumLimit": 1000,
+    "authType": "NON_EXCLUSIVE_LICENSE",
+    "authRegions": ["CHINA_MAINLAND"],
+    "authLimits": []
+  }
+}
+```
+
+## 删除
+```json
+mutation removeIdeaAuthTemplate($data:RemoveIdeaAuthTemplateInput!){
+  removeIdeaAuthTemplate(data:$data)
+}
+```
+```json
+{
+  "data": {
+    "ids": [1]
+  }
+}
+```
+## 设置默认授权模板
+```json
+mutation setDefaultIdeaAuthTemplate($data:SetDefaultIdeaAuthTemplateInput!){
+  setDefaultIdeaAuthTemplate(data:$data)
+}
+```
+```json
+{
+  "data": {
+    "id": 2
+  }
+}
+```
+
+## 获取单个授权模板信息
+```json
+query {
+  ideaAuthTemplate(id: 2){
+  isDefault
+  authTime
+  authScopes{
+  id
+  content
+}
+isAllowEdit
+id
+}
+}
+```
+## 获取授权模板信息列表
+````json
+query ideaAuthTemplates($data:IdeaAuthTemplatesInput!){
+  ideaAuthTemplates(data: $data){
+    total
+    records{
+      isDefault
+      authTime
+      authScopes{
+        mustCheck
+        id
+        content
+      }
+    }
+  }
+}
+````
+```json
+{
+  "data": {
+    "pageNum": 1,
+		"pageSize": 10
+  }
+}
+```

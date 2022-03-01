@@ -10,3 +10,4 @@
 
 * [会员/设计师/商家](dz_api/mrm.md)
 * [素材管理](dz_api/irm.md)
+* [版型管理](dz_api/drm_model.md)

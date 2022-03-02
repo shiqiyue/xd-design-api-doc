@@ -181,6 +181,13 @@ query test($id: Bigint!){
         view
         picture
       }
+      colorCard{
+        id
+        colorSystemID
+        name
+        picture
+        describe
+      }
     }
     drawings{
       id
@@ -331,7 +338,14 @@ query test($id: Bigint!){
                             "view": 3,
                             "picture": "cc"
                         }
-                    ]
+                    ],
+                    "colorCard": {
+                        "id": 1,
+                        "colorSystemID": 1,
+                        "name": "bs",
+                        "picture": "11111111111",
+                        "describe": "2222222222"
+                    }
                 },
                 {
                     "id": 2,
@@ -356,7 +370,14 @@ query test($id: Bigint!){
                             "view": 3,
                             "picture": "c"
                         }
-                    ]
+                    ],
+                    "colorCard": {
+                        "id": 2,
+                        "colorSystemID": 1,
+                        "name": "hs",
+                        "picture": "11111111111",
+                        "describe": "2222222222"
+                    }
                 }
             ],
             "drawings": [
@@ -430,11 +451,23 @@ query test($query: ShowModelMarketsInput!){
         origin
         describe
       }
-      modelColorDetails{
+      modelColor{
         id
-        modelColorID
-        view
-        picture
+        modelID
+        colorCardID
+        details{
+          id
+          modelColorID
+          view
+          picture
+        }
+        colorCard{
+          id
+          colorSystemID
+          name
+          picture
+          describe
+        }
       }
     }
   }
@@ -487,26 +520,38 @@ query test($query: ShowModelMarketsInput!){
                         "origin": null,
                         "describe": null
                     },
-                    "modelColorDetails": [
-                        {
-                            "id": 4,
-                            "modelColorID": 2,
-                            "view": 1,
-                            "picture": "a"
-                        },
-                        {
-                            "id": 5,
-                            "modelColorID": 2,
-                            "view": 2,
-                            "picture": "b"
-                        },
-                        {
-                            "id": 6,
-                            "modelColorID": 2,
-                            "view": 3,
-                            "picture": "c"
+                    "modelColor": {
+                        "id": 2,
+                        "modelID": 1,
+                        "colorCardID": 2,
+                        "details": [
+                            {
+                                "id": 4,
+                                "modelColorID": 2,
+                                "view": 1,
+                                "picture": "a"
+                            },
+                            {
+                                "id": 5,
+                                "modelColorID": 2,
+                                "view": 2,
+                                "picture": "b"
+                            },
+                            {
+                                "id": 6,
+                                "modelColorID": 2,
+                                "view": 3,
+                                "picture": "c"
+                            }
+                        ],
+                        "colorCard": {
+                            "id": 2,
+                            "colorSystemID": 1,
+                            "name": "hs",
+                            "picture": "11111111111",
+                            "describe": "2222222222"
                         }
-                    ]
+                    }
                 }
             ]
         }

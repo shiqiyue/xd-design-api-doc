@@ -482,8 +482,7 @@ query test($query: ShowModelMarketsInput!){
     "orderKey": "ID",
     "orderReverse": false,
     "filter": {
-      "modelID": 1,
-      "isOnSell": true
+      "modelID": 1
     }
   }
 }

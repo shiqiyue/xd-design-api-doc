@@ -15,4 +15,4 @@
 
 # [设计师平台接口](./dz_api/README.md)
 
-# [文件服务器接口](./f_api/READMD.md)
+# [文件服务器接口](./f_api/README.md)

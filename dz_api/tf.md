@@ -404,22 +404,25 @@ mutation test($req:AddDesignerAppealReq!){
 ## 获取设计师申诉
 ```graphql
 query test($req:GetDesignerAppealReq!){
-  getDesignerAppeal(req:$req){
-    record{
-      id
-      createdAt
-      updatedAt
-      designerId{
-        id
-        memberId ##todo 改member
-      }
-      reason
-      materials
-      dealStatus
-      dealResult
+    getDesignerAppeal(req:$req){
+        record{
+            id
+            createdAt
+            updatedAt
+            designerId{
+                id
+                memberId{
+                    id
+                    name
+                }
+            }
+            reason
+            materials
+            dealStatus
+            dealResult
+        }
+        total
     }
-    total
-  }
 }
 ```
 ```json
@@ -443,7 +446,10 @@ query test($req:GetDesignerAppealReq!){
           "updatedAt": "2022-03-07T15:35:49.333105+08:00",
           "designerId": {
             "id": 1,
-            "memberId": 2
+            "memberId": {
+              "id": 2,
+              "name": "测试"
+            }
           },
           "reason": "test",
           "materials": [
@@ -459,7 +465,10 @@ query test($req:GetDesignerAppealReq!){
           "updatedAt": "2022-03-07T15:35:59.225533+08:00",
           "designerId": {
             "id": 1,
-            "memberId": 2
+            "memberId": {
+              "id": 2,
+              "name": "测试"
+            }
           },
           "reason": "test",
           "materials": [
@@ -475,7 +484,10 @@ query test($req:GetDesignerAppealReq!){
           "updatedAt": "2022-03-09T15:20:11.290774+08:00",
           "designerId": {
             "id": 1,
-            "memberId": 2
+            "memberId": {
+              "id": 2,
+              "name": "测试"
+            }
           },
           "reason": "test",
           "materials": [
